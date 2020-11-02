@@ -1,0 +1,2276 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "tags": [
+        "FIFE"
+      ],
+      "title": "Fifebatch",
+      "type": "dashboards"
+    }
+  ],
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 66,
+      "panels": [],
+      "title": "Current Job Status",
+      "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "short",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "hideTimeOverride": true,
+      "id": 16,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "sumSeries(osg-open-pool.jobs.totals.{held,idle,running}.totals.count)",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "sumSeries(osg-open-pool.jobs.totals.{held,idle,running}.totals.count)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": "10000,20000",
+      "timeFrom": null,
+      "title": "Total",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "short",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 6,
+        "y": 1
+      },
+      "hideTimeOverride": true,
+      "id": 6,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "sumSeries(osg-open-pool.jobs.totals.running.totals.count)",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "sumSeries(osg-open-pool.jobs.totals.running.totals.count)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": "12000,20000",
+      "timeFrom": null,
+      "title": "Running",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "short",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "hideTimeOverride": true,
+      "id": 7,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "sumSeries(osg-open-pool.jobs.totals.idle.totals.count)",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "sumSeries(osg-open-pool.jobs.totals.idle.totals.count)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": "10000,20000",
+      "timeFrom": null,
+      "title": "Idle",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorPostfix": false,
+      "colorPrefix": false,
+      "colorValue": true,
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "short",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "hideTimeOverride": true,
+      "id": 5,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "sumSeries(osg-open-pool.jobs.totals.held.totals.count)",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "sumSeries(osg-open-pool.jobs.totals.held.totals.count)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": "2500,5000",
+      "timeFrom": null,
+      "title": "Held",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 67,
+      "panels": [],
+      "title": "New row",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 5
+      },
+      "height": "",
+      "hiddenSeries": false,
+      "id": 64,
+      "legend": {
+        "alignAsTable": false,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": false,
+        "total": true,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(osg-open-pool.jobs.totals.running.totals.count_recent, 'Started')",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Recent Jobs Started",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 12,
+        "y": 5
+      },
+      "height": "",
+      "hiddenSeries": false,
+      "id": 65,
+      "legend": {
+        "alignAsTable": false,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": false,
+        "total": true,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(osg-open-pool.jobs.totals.idle.totals.count_recent, 'Submitted')",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Recent Jobs Submitted",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 68,
+      "panels": [],
+      "title": "Resource Utilization",
+      "type": "row"
+    },
+    {
+      "aliasColors": {
+        "CPU Claimed": "#EAB839",
+        "CPU Utilized": "#967302",
+        "Disk Claimed": "#6ED0E0",
+        "Disk Utilized": "#0A437C",
+        "Efficiency": "#890F02",
+        "Memory Utilized": "#3F6833",
+        "Requested": "#EAB839",
+        "Used": "#967302"
+      },
+      "bars": false,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 10
+      },
+      "hiddenSeries": false,
+      "id": 55,
+      "interval": "",
+      "isNew": true,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 1,
+          "refId": "A",
+          "target": "alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.cpu_request, 2), 'Requested')",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(keepLastValue(scale(multiplySeries(osg-open-pool.jobs.totals.running.totals.efficiency, #A), 0.01), 2), 'Used')",
+          "targetFull": "alias(keepLastValue(scale(multiplySeries(osg-open-pool.jobs.totals.running.totals.efficiency, alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.cpu_request, 2), 'Requested')), 0.01), 2), 'Used')",
+          "textEditor": true
+        },
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "D",
+          "target": "alias(osg-open-pool.jobs.totals.running.totals.efficiency, 'Efficiency')",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Utilization",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "percent",
+          "logBase": 1,
+          "max": 100,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "CPU Claimed": "#EAB839",
+        "CPU Utilized": "#967302",
+        "Disk Claimed": "#6ED0E0",
+        "Disk Utilized": "#0A437C",
+        "Efficiency": "#890F02",
+        "Memory Utilized": "#3F6833",
+        "Requested": "#7EB26D",
+        "Used": "#3F6833"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 10
+      },
+      "hiddenSeries": false,
+      "id": 58,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Efficiency",
+          "fill": 0,
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": -1,
+          "refId": "A",
+          "target": "alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.memory_request_b, 2), 'Requested')",
+          "textEditor": true
+        },
+        {
+          "refCount": -1,
+          "refId": "B",
+          "target": "alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.memory_usage_b, 2), 'Used')",
+          "textEditor": true
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(divideSeries(#B, #A), 'Efficiency')",
+          "targetFull": "alias(divideSeries(alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.memory_usage_b, 2), 'Used'), alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.memory_request_b, 2), 'Requested')), 'Efficiency')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Memory Utilization",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bytes",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "percentunit",
+          "logBase": 1,
+          "max": 1,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "CPU Claimed": "#EAB839",
+        "CPU Utilized": "#967302",
+        "Disk Claimed": "#6ED0E0",
+        "Disk Utilized": "#0A437C",
+        "Efficiency": "#890F02",
+        "Memory Utilized": "#3F6833",
+        "Requested": "#6ED0E0",
+        "Used": "#2F575E"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 10
+      },
+      "hiddenSeries": false,
+      "id": 59,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Efficiency",
+          "fill": 0,
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": -1,
+          "refId": "A",
+          "target": "alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.disk_request_b, 2), 'Requested')",
+          "textEditor": true
+        },
+        {
+          "refCount": -1,
+          "refId": "B",
+          "target": "alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.disk_usage_b, 2), 'Used')",
+          "textEditor": true
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(divideSeries(#B, #A), 'Efficiency')",
+          "targetFull": "alias(divideSeries(alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.disk_usage_b, 2), 'Used'), alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.disk_request_b, 2), 'Requested')), 'Efficiency')",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Disk Utilization",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bytes",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "percentunit",
+          "logBase": 1,
+          "max": 1,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": null,
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 0,
+        "y": 17
+      },
+      "height": "25px",
+      "id": 61,
+      "interval": null,
+      "isNew": true,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "Efficiency",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(osg-open-pool.jobs.totals.running.totals.efficiency, 'Efficiency')",
+          "textEditor": true
+        }
+      ],
+      "thresholds": "50,75",
+      "title": "Current CPU Efficiency",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 8,
+        "y": 17
+      },
+      "height": "25px",
+      "id": 62,
+      "interval": null,
+      "isNew": true,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "Efficiency",
+      "targets": [
+        {
+          "hide": true,
+          "refCount": -1,
+          "refId": "A",
+          "target": "alias(osg-open-pool.jobs.totals.running.totals.memory_request_b, 'Requested')",
+          "textEditor": true
+        },
+        {
+          "hide": true,
+          "refCount": -1,
+          "refId": "B",
+          "target": "alias(osg-open-pool.jobs.totals.running.totals.memory_usage_b, 'Used')",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(divideSeries(#B, #A), 'Efficiency')",
+          "targetFull": "alias(divideSeries(alias(osg-open-pool.jobs.totals.running.totals.memory_usage_b, 'Used'), alias(osg-open-pool.jobs.totals.running.totals.memory_request_b, 'Requested')), 'Efficiency')"
+        }
+      ],
+      "thresholds": ".5,.75",
+      "title": "Current Memory Efficiency",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 16,
+        "y": 17
+      },
+      "height": "25px",
+      "id": 63,
+      "interval": null,
+      "isNew": true,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "Efficiency",
+      "targets": [
+        {
+          "hide": true,
+          "refCount": -1,
+          "refId": "A",
+          "target": "alias(osg-open-pool.jobs.totals.running.totals.disk_request_b, 'Requested')",
+          "textEditor": true
+        },
+        {
+          "hide": true,
+          "refCount": -1,
+          "refId": "B",
+          "target": "alias(osg-open-pool.jobs.totals.running.totals.disk_usage_b, 'Used')",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(divideSeries(#B, #A), 'Efficiency')",
+          "targetFull": "alias(divideSeries(alias(osg-open-pool.jobs.totals.running.totals.disk_usage_b, 'Used'), alias(osg-open-pool.jobs.totals.running.totals.disk_request_b, 'Requested')), 'Efficiency')"
+        }
+      ],
+      "thresholds": ".5,.75",
+      "title": "Current Disk Efficiency",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 20
+      },
+      "id": 69,
+      "panels": [],
+      "title": "Running Jobs",
+      "type": "row"
+    },
+    {
+      "aliasColors": {
+        "Idle": "#890F02",
+        "Total": "#890F02"
+      },
+      "bars": false,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 21
+      },
+      "height": "",
+      "hiddenSeries": false,
+      "id": 60,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Total",
+          "bars": false,
+          "fill": 0,
+          "lines": true,
+          "linewidth": 2,
+          "stack": false,
+          "yaxis": 1
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(keepLastValue(maximumAbove(osg-open-pool.jobs.users.*.running.totals.count, 0), 2), 4)",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(keepLastValue(osg-open-pool.jobs.totals.running.totals.count, 2), 'Total')",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Running Jobs by User",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "1-4 hours": "#EAB839",
+        "< 1 hour": "#7EB26D"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 21
+      },
+      "hiddenSeries": false,
+      "id": 43,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Avg Age in Queue",
+          "bars": false,
+          "lines": true,
+          "stack": false,
+          "yaxis": 2
+        },
+        {
+          "alias": "< 1 hour",
+          "color": "#7EB26D"
+        },
+        {
+          "alias": "1-4 hours",
+          "color": "#629E51"
+        },
+        {
+          "alias": "4-8 hours",
+          "color": "#3F6833"
+        },
+        {
+          "alias": "8-24 hours",
+          "color": "#EF843C"
+        },
+        {
+          "alias": "24-48 hours",
+          "color": "#E0752D"
+        },
+        {
+          "alias": "2-7 days",
+          "color": "#58140C"
+        },
+        {
+          "alias": "> 7 days",
+          "color": "#890F02"
+        },
+        {
+          "alias": "unknown",
+          "color": "#1F78C1"
+        },
+        {
+          "alias": "now",
+          "color": "#E0F9D7"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.count_unknown), 'unknown')",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.select metric), '> 7 days')",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.count_one_week), '2-7 days')",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.select metric), '24-48 hours')",
+          "textEditor": true
+        },
+        {
+          "refCount": 0,
+          "refId": "E",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.count_one_day), '8-24 hours')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "F",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.count_eight_hours), '4-8 hours')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "G",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.count_four_hours), '1-4 hours')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "H",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.count_one_hour), '< 1 hour')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "I",
+          "target": "alias(sumSeries(osg-open-pool.jobs.totals.running.totals.count_recent), 'now')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Running Jobs by Runtime",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "id": 70,
+      "panels": [],
+      "title": "Idle Jobs",
+      "type": "row"
+    },
+    {
+      "aliasColors": {
+        "Idle": "#890F02",
+        "Total": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 29
+      },
+      "height": "",
+      "hiddenSeries": false,
+      "id": 51,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Total",
+          "bars": false,
+          "fill": 0,
+          "lines": true,
+          "linewidth": 2,
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(maximumAbove(osg-open-pool.jobs.users.*.idle.totals.count, 0), 4)",
+          "textEditor": false
+        },
+        {
+          "refId": "B",
+          "target": "alias(osg-open-pool.jobs.totals.idle.totals.count, 'Total')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Idle Jobs by User",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "1-4 hours": "#EAB839",
+        "< 1 hour": "#7EB26D"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 29
+      },
+      "hiddenSeries": false,
+      "id": 41,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Avg Age in Queue",
+          "bars": false,
+          "lines": true,
+          "stack": false,
+          "yaxis": 2
+        },
+        {
+          "alias": "< 1 hour",
+          "color": "#7EB26D"
+        },
+        {
+          "alias": "1-4 hours",
+          "color": "#629E51"
+        },
+        {
+          "alias": "4-8 hours",
+          "color": "#3F6833"
+        },
+        {
+          "alias": "8-24 hours",
+          "color": "#EF843C"
+        },
+        {
+          "alias": "24-48 hours",
+          "color": "#E0752D"
+        },
+        {
+          "alias": "2-7 days",
+          "color": "#58140C"
+        },
+        {
+          "alias": "> 7 days",
+          "color": "#890F02"
+        },
+        {
+          "alias": "unknown",
+          "color": "#1F78C1"
+        },
+        {
+          "alias": "now",
+          "color": "#E0F9D7"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.select metric), 2), 'unknown')",
+          "textEditor": true
+        },
+        {
+          "refId": "B",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_longer), 2), '> 7 days')",
+          "textEditor": false
+        },
+        {
+          "refId": "C",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_one_week), 2), '2-7 days')",
+          "textEditor": false
+        },
+        {
+          "refId": "D",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_two_days), 2), '24-48 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "E",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_one_day), 2), '8-24 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "F",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_eight_hours), 2), '4-8 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "G",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_four_hours), 2), '1-4 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "H",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_one_hour), 2), '< 1 hour')",
+          "textEditor": false
+        },
+        {
+          "refId": "I",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.idle.totals.count_recent), 2), 'now')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Idle Jobs by Queue Age",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 71,
+      "panels": [],
+      "title": "Held Jobs",
+      "type": "row"
+    },
+    {
+      "aliasColors": {
+        "Total": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 37
+      },
+      "hiddenSeries": false,
+      "id": 48,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Total",
+          "fill": 0,
+          "linewidth": 2,
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(osg-open-pool.jobs.users.*.held.totals.count, 4)"
+        },
+        {
+          "refId": "B",
+          "target": "alias(osg-open-pool.jobs.totals.held.totals.count, 'Total')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Held Jobs by User",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "1-4 hours": "#EAB839",
+        "< 1 hour": "#7EB26D"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 37
+      },
+      "hiddenSeries": false,
+      "id": 54,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Avg Age in Queue",
+          "bars": false,
+          "lines": true,
+          "stack": false,
+          "yaxis": 2
+        },
+        {
+          "alias": "< 1 hour",
+          "color": "#7EB26D"
+        },
+        {
+          "alias": "1-4 hours",
+          "color": "#629E51"
+        },
+        {
+          "alias": "4-8 hours",
+          "color": "#3F6833"
+        },
+        {
+          "alias": "8-24 hours",
+          "color": "#EF843C"
+        },
+        {
+          "alias": "24-48 hours",
+          "color": "#E0752D"
+        },
+        {
+          "alias": "2-7 days",
+          "color": "#890F02"
+        },
+        {
+          "alias": "> 7 days",
+          "color": "#58140C"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.held.totals.count_holdage_longer), 2), '> 7 days')",
+          "textEditor": false
+        },
+        {
+          "refId": "B",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.held.totals.count_holdage_one_week), 2), '2-7 days')",
+          "textEditor": false
+        },
+        {
+          "refId": "C",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.held.totals.count_holdage_two_days), 2), '24-48 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "D",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.held.totals.count_holdage_one_day), 2), '8-24 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "E",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.held.totals.count_holdage_eight_hours), 2), '4-8 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "F",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.held.totals.count_holdage_four_hours), 2), '1-4 hours')",
+          "textEditor": false
+        },
+        {
+          "refId": "G",
+          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.totals.held.totals.count_holdage_one_hour), 2), '< 1 hour')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Held Jobs by Hold Time",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "5m",
+  "schemaVersion": 26,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-7d",
+    "now": true,
+    "to": "now-5m"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "nowDelay": "5m",
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "timezone": "browser",
+  "title": "Jobs",
+  "uid": "i0JplTvMz",
+  "version": 3
+}
+

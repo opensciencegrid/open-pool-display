@@ -1,0 +1,793 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 1,
+  "id": 4,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {
+        "TotalSchedulerJobsRunning": "#967302"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 61,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "maxPerRow": 2,
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": "schedd",
+      "repeatIteration": 1441216411612,
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(osg-open-pool.schedds.*.TotalIdleJobs, 3)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Idle Jobs",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "TotalSchedulerJobsRunning": "#967302"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 73,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "maxPerRow": 2,
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "B",
+          "target": "aliasByNode(osg-open-pool.schedds.*.TotalRunningJobs, 3)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Running Jobs",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "hiddenSeries": false,
+      "id": 75,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sumSeries(osg-open-pool.schedds.*.RecentJobsExitException, *), 'Exceptions')"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sumSeries(osg-open-pool.schedds.*.RecentJobsExecFailed, *), 'Exec Failed')"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(sumSeries(osg-open-pool.schedds.*.RecentJobsKilled, *), 'Killed')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Issues",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "columns": [
+        {
+          "text": "Min",
+          "value": "min"
+        },
+        {
+          "text": "Max",
+          "value": "max"
+        },
+        {
+          "text": "Avg",
+          "value": "avg"
+        },
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 72,
+      "isNew": true,
+      "links": [],
+      "pageSize": null,
+      "scroll": false,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": false
+      },
+      "styles": [
+        {
+          "align": "auto",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "align": "auto",
+          "colorMode": "cell",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 1,
+          "pattern": "/.*/",
+          "thresholds": [
+            ".75",
+            ".95"
+          ],
+          "type": "number",
+          "unit": "percentunit"
+        }
+      ],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(osg-open-pool.{schedds,collectors,negotiators}.*.RecentDaemonCoreDutyCycle, 2, 3)",
+          "textEditor": false
+        }
+      ],
+      "title": "DaemonCore Duty Cycle",
+      "transform": "timeseries_aggregations",
+      "type": "table-old"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 21
+      },
+      "hiddenSeries": false,
+      "id": 42,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "fifebatchgpvmhead1_fnal_gov",
+          "yaxis": 1
+        },
+        {
+          "alias": "DaemonCoreDutyCycle",
+          "yaxis": 2
+        },
+        {
+          "alias": "RecentDaemonCoreDutyCycle",
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(osg-open-pool.negotiators.*.LastNegotiationCycleDuration0, 3)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "custom",
+          "fill": true,
+          "fillColor": "rgba(216, 200, 27, 0.27)",
+          "op": "gt",
+          "value": 60
+        },
+        {
+          "colorMode": "custom",
+          "fill": true,
+          "fillColor": "rgba(234, 112, 112, 0.22)",
+          "op": "gt",
+          "value": 300
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Negotiation Cycle Duration",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "s",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 21
+      },
+      "hiddenSeries": false,
+      "id": 62,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "fifebatchgpvmhead1_fnal_gov",
+          "yaxis": 1
+        },
+        {
+          "alias": "DaemonCoreDutyCycle",
+          "yaxis": 2
+        },
+        {
+          "alias": "LastNegotiationCycleMatchRate0",
+          "yaxis": 2
+        },
+        {
+          "alias": "LastNegotiationCycleTotalSlots0",
+          "yaxis": 2
+        },
+        {
+          "alias": "LastNegotiationCycleCandidateSlots0",
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(osg-open-pool.negotiators.*.LastNegotiationCycleMatches0, 3)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Negotiator Matches",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 21
+      },
+      "hiddenSeries": false,
+      "id": 71,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "fifebatchgpvmhead1_fnal_gov",
+          "yaxis": 1
+        },
+        {
+          "alias": "DaemonCoreDutyCycle",
+          "yaxis": 2
+        },
+        {
+          "alias": "LastNegotiationCycleMatchRate0",
+          "yaxis": 2
+        },
+        {
+          "alias": "LastNegotiationCycleTotalSlots0",
+          "yaxis": 2
+        },
+        {
+          "alias": "LastNegotiationCycleCandidateSlots0",
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "B",
+          "target": "aliasByNode(osg-open-pool.negotiators.*.LastNegotiationCycleCandidateSlots0, 3)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Negotiator Candidate Slots",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "5m",
+  "schemaVersion": 26,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "refresh_intervals": [
+      "5m"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "1d",
+      "7d",
+      "30d",
+      "60d",
+      "90d"
+    ],
+    "type": "timepicker"
+  },
+  "timezone": "browser",
+  "title": "Pool Health",
+  "uid": "zfZdyTvMk",
+  "version": 4
+}
+
