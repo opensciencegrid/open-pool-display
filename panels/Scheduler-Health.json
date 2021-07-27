@@ -80,17 +80,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias(osg-open-pool.schedds.$schedd.RecentJobsExitException, 'Exception')"
+          "target": "alias(test.osg-open-pool.schedds.$schedd.RecentJobsExitException, 'Exception')"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "alias(osg-open-pool.schedds.$schedd.RecentJobsKilled, 'Killed')"
+          "target": "alias(test.osg-open-pool.schedds.$schedd.RecentJobsKilled, 'Killed')"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "alias(osg-open-pool.schedds.$schedd.RecentJobsExecFailed, 'Execution Failed')"
+          "target": "alias(test.osg-open-pool.schedds.$schedd.RecentJobsExecFailed, 'Execution Failed')"
         }
       ],
       "thresholds": [],
@@ -206,14 +206,14 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "alias(osg-open-pool.schedds.$schedd.TransferQueueNumUploading, 'Uploading')",
+          "target": "alias(test.osg-open-pool.schedds.$schedd.TransferQueueNumUploading, 'Uploading')",
           "textEditor": false
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "alias(osg-open-pool.schedds.$schedd.TransferQueueNumWaitingToUpload, 'Waiting')"
+          "target": "alias(test.osg-open-pool.schedds.$schedd.TransferQueueNumWaitingToUpload, 'Waiting')"
         }
       ],
       "thresholds": [],
@@ -315,14 +315,14 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "alias(osg-open-pool.schedds.$schedd.TransferQueueNumDownloading, 'Uploading')",
+          "target": "alias(test.osg-open-pool.schedds.$schedd.TransferQueueNumDownloading, 'Uploading')",
           "textEditor": false
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "alias(osg-open-pool.schedds.$schedd.TransferQueueNumWaitingToDownload, 'Waiting')",
+          "target": "alias(test.osg-open-pool.schedds.$schedd.TransferQueueNumWaitingToDownload, 'Waiting')",
           "textEditor": false
         }
       ],
@@ -420,7 +420,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(osg-open-pool.schedds.$schedd.TransferQueueUploadWaitTime, 'Wait Time')",
+          "target": "alias(test.osg-open-pool.schedds.$schedd.TransferQueueUploadWaitTime, 'Wait Time')",
           "textEditor": false
         }
       ],
@@ -516,7 +516,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(osg-open-pool.schedds.$schedd.TransferQueueDownloadWaitTime, 'Wait Time')",
+          "target": "alias(test.osg-open-pool.schedds.$schedd.TransferQueueDownloadWaitTime, 'Wait Time')",
           "textEditor": false
         }
       ],
@@ -576,14 +576,14 @@
           "value": "login05_osgconnect_net"
         },
         "datasource": "Graphite",
-        "definition": "osg-open-pool.schedds.*",
+        "definition": "test.osg-open-pool.schedds.*",
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "schedd",
         "options": [],
-        "query": "osg-open-pool.schedds.*",
+        "query": "test.osg-open-pool.schedds.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,

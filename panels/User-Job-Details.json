@@ -82,7 +82,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(osg-open-pool.jobs.users.$user.running.totals.count_recent, 'Started')",
+          "target": "alias(test.osg-open-pool.jobs.users.$user.running.totals.count_recent, 'Started')",
           "textEditor": true
         }
       ],
@@ -181,7 +181,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(osg-open-pool.jobs.users.$user.idle.totals.count_recent, 'Submitted')",
+          "target": "alias(test.osg-open-pool.jobs.users.$user.idle.totals.count_recent, 'Submitted')",
           "textEditor": true
         }
       ],
@@ -284,17 +284,17 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.users.$user.running.totals.count), 2), 'Running')",
+          "target": "alias(keepLastValue(sumSeries(test.osg-open-pool.jobs.users.$user.running.totals.count), 2), 'Running')",
           "textEditor": false
         },
         {
           "refId": "B",
-          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.users.$user.idle.totals.count), 2), 'Idle')",
+          "target": "alias(keepLastValue(sumSeries(test.osg-open-pool.jobs.users.$user.idle.totals.count), 2), 'Idle')",
           "textEditor": false
         },
         {
           "refId": "C",
-          "target": "alias(keepLastValue(sumSeries(osg-open-pool.jobs.users.$user.held.totals.count), 2), 'Held')",
+          "target": "alias(keepLastValue(sumSeries(test.osg-open-pool.jobs.users.$user.held.totals.count), 2), 'Held')",
           "textEditor": false
         }
       ],
@@ -388,7 +388,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(keepLastValue(osg-open-pool.jobs.users.$user.running.totals.efficiency, 2), 'CPU Efficiency')",
+          "target": "alias(keepLastValue(test.osg-open-pool.jobs.users.$user.running.totals.efficiency, 2), 'CPU Efficiency')",
           "textEditor": false
         }
       ],
@@ -508,7 +508,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(keepLastValue(osg-open-pool.jobs.users.$user.running.sites.*.count, 2), 7)",
+          "target": "aliasByNode(keepLastValue(test.osg-open-pool.jobs.users.$user.running.sites.*.count, 2), 7)",
           "textEditor": false
         }
       ],
@@ -568,14 +568,14 @@
           "value": "dweitzel"
         },
         "datasource": "Graphite",
-        "definition": "osg-open-pool.jobs.users.*",
+        "definition": "test.osg-open-pool.jobs.users.*",
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "user",
         "options": [],
-        "query": "osg-open-pool.jobs.users.*",
+        "query": "test.osg-open-pool.jobs.users.*",
         "refresh": 1,
         "refresh_on_load": false,
         "regex": "",

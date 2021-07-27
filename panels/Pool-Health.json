@@ -75,7 +75,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(osg-open-pool.schedds.*.TotalIdleJobs, 3)",
+          "target": "aliasByNode(test.osg-open-pool.schedds.*.TotalIdleJobs, 3)",
           "textEditor": true
         }
       ],
@@ -174,7 +174,7 @@
       "targets": [
         {
           "refId": "B",
-          "target": "aliasByNode(osg-open-pool.schedds.*.TotalRunningJobs, 3)",
+          "target": "aliasByNode(test.osg-open-pool.schedds.*.TotalRunningJobs, 3)",
           "textEditor": true
         }
       ],
@@ -266,19 +266,19 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "alias(sumSeries(osg-open-pool.schedds.*.RecentJobsExitException, *), 'Exceptions')"
+          "target": "alias(sumSeries(test.osg-open-pool.schedds.*.RecentJobsExitException, *), 'Exceptions')"
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "alias(sumSeries(osg-open-pool.schedds.*.RecentJobsExecFailed, *), 'Exec Failed')"
+          "target": "alias(sumSeries(test.osg-open-pool.schedds.*.RecentJobsExecFailed, *), 'Exec Failed')"
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "C",
-          "target": "alias(sumSeries(osg-open-pool.schedds.*.RecentJobsKilled, *), 'Killed')"
+          "target": "alias(sumSeries(test.osg-open-pool.schedds.*.RecentJobsKilled, *), 'Killed')"
         }
       ],
       "thresholds": [],
@@ -395,7 +395,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(osg-open-pool.{schedds,collectors,negotiators}.*.RecentDaemonCoreDutyCycle, 2, 3)",
+          "target": "aliasByNode(test.osg-open-pool.{schedds,collectors,negotiators}.*.RecentDaemonCoreDutyCycle, 2, 3)",
           "textEditor": false
         }
       ],
@@ -466,7 +466,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(osg-open-pool.negotiators.*.LastNegotiationCycleDuration0, 3)",
+          "target": "aliasByNode(test.osg-open-pool.negotiators.*.LastNegotiationCycleDuration0, 3)",
           "textEditor": true
         }
       ],
@@ -596,7 +596,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(osg-open-pool.negotiators.*.LastNegotiationCycleMatches0, 3)",
+          "target": "aliasByNode(test.osg-open-pool.negotiators.*.LastNegotiationCycleMatches0, 3)",
           "textEditor": true
         }
       ],
@@ -711,7 +711,7 @@
       "targets": [
         {
           "refId": "B",
-          "target": "aliasByNode(osg-open-pool.negotiators.*.LastNegotiationCycleCandidateSlots0, 3)",
+          "target": "aliasByNode(test.osg-open-pool.negotiators.*.LastNegotiationCycleCandidateSlots0, 3)",
           "textEditor": true
         }
       ],
