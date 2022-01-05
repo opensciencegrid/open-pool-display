@@ -10,8 +10,8 @@ if [ "x$TAG" = "x" ]; then
 fi
 
 cd $TOP_DIR/panopticon && \
-    docker build -t opensciencegrid/open-pool-display-panopticon:$TAG .
+    docker build -t hub.opensciencegrid.org/opensciencegrid/open-pool-display-panopticon:$TAG .
 
 cd $TOP_DIR/web && \
-    docker build -t opensciencegrid/open-pool-display-web:$TAG .
+    docker build -t hub.opensciencegrid.org/opensciencegrid/open-pool-display-web:$TAG .
 

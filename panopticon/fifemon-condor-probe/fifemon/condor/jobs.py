@@ -85,6 +85,8 @@ def job_metrics(job_classad):
     try:
         simg = re.sub(r'^/cvmfs/[^/]+/', '', simg)
         simg = re.sub(r'\.', '_', simg)
+        simg = re.sub(r'/', '__', simg)
+        simg = re.sub(r':', '__', simg)
     except:
         pass
     simg = clean_metric_name(simg)
@@ -112,10 +114,8 @@ def job_metrics(job_classad):
             counters.append(".idle.usage_models.unknown")
     elif job_classad["JobStatus"] == 2:
         counters = [".running.totals"]
-        if "MATCH_GLIDEIN_Site" in job_classad:
-            site = job_classad["MATCH_GLIDEIN_Site"]
-            if site == "FNAL" and "MATCH_EXP_JOBGLIDEIN_ResourceName" in job_classad:
-                site = job_classad["MATCH_EXP_JOBGLIDEIN_ResourceName"]
+        if "MATCH_EXP_JOBGLIDEIN_ResourceName" in job_classad:
+            site = job_classad["MATCH_EXP_JOBGLIDEIN_ResourceName"]
             counters.append(".running.sites." + site)
         else:
             counters.append(".running.sites.unknown")

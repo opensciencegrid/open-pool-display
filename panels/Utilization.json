@@ -10,19 +10,25 @@
         "limit": 100,
         "name": "Annotations & Alerts",
         "showIn": 0,
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 5,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -31,7 +37,6 @@
       },
       "id": 39,
       "panels": [],
-      "repeat": null,
       "title": "Relative Utilization",
       "type": "row"
     },
@@ -46,15 +51,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 8,
       "fillGradient": 0,
       "grid": {},
@@ -83,8 +85,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -97,14 +102,14 @@
           "hide": true,
           "refCount": 0,
           "refId": "E",
-          "target": "sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalSlotCpus, test.osg-open-pool.slots.StaticGlidein.totals.Cpus)",
+          "target": "sumSeries(osg-ospool.slots.PartitionableGlidein.totals.TotalSlotCpus, test.osg-ospool.slots.StaticGlidein.totals.Cpus)",
           "textEditor": true
         },
         {
           "hide": true,
           "refCount": 0,
           "refId": "A",
-          "target": "sumSeries(test.osg-open-pool.slots.DynamicGlidein.Claimed.*.*.Cpus, test.osg-open-pool.slots.StaticGlidein.Claimed.*.*Cpus)",
+          "target": "sumSeries(osg-ospool.slots.DynamicGlidein.Claimed.*.*.Cpus, test.osg-ospool.slots.StaticGlidein.Claimed.*.*Cpus)",
           "textEditor": true
         },
         {
@@ -112,21 +117,19 @@
           "refCount": 1,
           "refId": "G",
           "target": "alias(divideSeries(#A, #E), 'CPU Claimed')",
-          "targetFull": "alias(divideSeries(sumSeries(test.osg-open-pool.slots.DynamicGlidein.Claimed.*.*.Cpus, test.osg-open-pool.slots.StaticGlidein.Claimed.*.*Cpus), sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalSlotCpus, test.osg-open-pool.slots.StaticGlidein.totals.Cpus)), 'CPU Claimed')"
+          "targetFull": "alias(divideSeries(sumSeries(osg-ospool.slots.DynamicGlidein.Claimed.*.*.Cpus, test.osg-ospool.slots.StaticGlidein.Claimed.*.*Cpus), sumSeries(test.osg-ospool.slots.PartitionableGlidein.totals.TotalSlotCpus, test.osg-ospool.slots.StaticGlidein.totals.Cpus)), 'CPU Claimed')"
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "J",
-          "target": "alias(divideSeries(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-open-pool.slots.StaticGlidein.Claimed.*.*.LoadAvg), #E), 'CPU Utilized')",
-          "targetFull": "alias(divideSeries(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-open-pool.slots.StaticGlidein.Claimed.*.*.LoadAvg), sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalSlotCpus, test.osg-open-pool.slots.StaticGlidein.totals.Cpus)), 'CPU Utilized')",
+          "target": "alias(divideSeries(sumSeries(osg-ospool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-ospool.slots.StaticGlidein.Claimed.*.*.LoadAvg), #E), 'CPU Utilized')",
+          "targetFull": "alias(divideSeries(sumSeries(osg-ospool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-ospool.slots.StaticGlidein.Claimed.*.*.LoadAvg), sumSeries(test.osg-ospool.slots.PartitionableGlidein.totals.TotalSlotCpus, test.osg-ospool.slots.StaticGlidein.totals.Cpus)), 'CPU Utilized')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "CPU Utilization",
       "tooltip": {
         "shared": true,
@@ -135,9 +138,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -152,14 +153,11 @@
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -173,15 +171,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 8,
       "fillGradient": 0,
       "grid": {},
@@ -210,8 +205,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -223,13 +221,13 @@
         {
           "hide": true,
           "refId": "B",
-          "target": "sumSeries(test.osg-open-pool.slots.Partitionable.totals.TotalMemory, test.osg-open-pool.slots.Static.totals.Memory)",
+          "target": "sumSeries(osg-ospool.slots.Partitionable.totals.TotalMemory, test.osg-ospool.slots.Static.totals.Memory)",
           "textEditor": true
         },
         {
           "hide": true,
           "refId": "C",
-          "target": "sumSeries(test.osg-open-pool.slots.Dynamic.Claimed.*.*.Memory, test.osg-open-pool.slots.Static.Claimed.*.*.Memory)",
+          "target": "sumSeries(osg-ospool.slots.Dynamic.Claimed.*.*.Memory, test.osg-ospool.slots.Static.Claimed.*.*.Memory)",
           "textEditor": true
         },
         {
@@ -239,14 +237,12 @@
         },
         {
           "refId": "K",
-          "target": "alias(divideSeries(sumSeries(test.osg-open-pool.slots.jobs.totals.MemoryUsage),#B), 'Memory Utilized')",
+          "target": "alias(divideSeries(sumSeries(osg-ospool.slots.jobs.totals.MemoryUsage),#B), 'Memory Utilized')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Memory Utilization",
       "tooltip": {
         "shared": true,
@@ -255,9 +251,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -272,14 +266,11 @@
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -293,15 +284,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 8,
       "fillGradient": 0,
       "grid": {},
@@ -330,8 +318,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -343,13 +334,13 @@
         {
           "hide": true,
           "refId": "A",
-          "target": "sumSeries(test.osg-open-pool.slots.Partitionable.totals.TotalDisk, test.osg-open-pool.slots.Static.totals.Disk)",
+          "target": "sumSeries(osg-ospool.slots.Partitionable.totals.TotalDisk, test.osg-ospool.slots.Static.totals.Disk)",
           "textEditor": true
         },
         {
           "hide": true,
           "refId": "D",
-          "target": "sumSeries(test.osg-open-pool.slots.Dynamic.Claimed.*.*.Disk, test.osg-open-pool.slots.Static.Claimed.*.*.Disk)",
+          "target": "sumSeries(osg-ospool.slots.Dynamic.Claimed.*.*.Disk, test.osg-ospool.slots.Static.Claimed.*.*.Disk)",
           "textEditor": true
         },
         {
@@ -359,14 +350,12 @@
         },
         {
           "refId": "L",
-          "target": "alias(divideSeries(sumSeries(test.osg-open-pool.slots.jobs.totals.DiskUsage),#A), 'Disk Utilized')",
+          "target": "alias(divideSeries(sumSeries(osg-ospool.slots.jobs.totals.DiskUsage),#A), 'Disk Utilized')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Disk Utilization",
       "tooltip": {
         "shared": true,
@@ -375,9 +364,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -392,19 +379,15 @@
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -427,15 +410,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 8,
       "fillGradient": 0,
       "grid": {},
@@ -463,8 +443,11 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -490,45 +473,43 @@
           "refCount": 1,
           "refId": "A",
           "target": "alias(diffSeries(#B, #C), 'Claimed')",
-          "targetFull": "alias(diffSeries(alias(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalSlotCpus,test.osg-open-pool.slots.StaticGlidein.totals.Cpus), 'Total'), alias(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.Cpus,test.osg-open-pool.slots.StaticGlidein.Unclaimed.Cpus), 'Unclaimed')), 'Claimed')"
+          "targetFull": "alias(diffSeries(alias(sumSeries(osg-ospool.slots.PartitionableGlidein.totals.TotalSlotCpus,test.osg-ospool.slots.StaticGlidein.totals.Cpus), 'Total'), alias(sumSeries(test.osg-ospool.slots.PartitionableGlidein.totals.Cpus,test.osg-ospool.slots.StaticGlidein.Unclaimed.Cpus), 'Unclaimed')), 'Claimed')"
         },
         {
           "refCount": 1,
           "refId": "F",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.DynamicGlidein.Claimed.*.*.Cpus,test.osg-open-pool.slots.StaticGlidein.Claimed.*.*.Cpus), 'Claimed')",
+          "target": "alias(sumSeries(osg-ospool.slots.DynamicGlidein.Claimed.*.*.Cpus,test.osg-ospool.slots.StaticGlidein.Claimed.*.*.Cpus), 'Claimed')",
           "textEditor": true
         },
         {
           "refCount": 1,
           "refId": "C",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.Cpus,test.osg-open-pool.slots.StaticGlidein.Unclaimed.Cpus), 'Unclaimed')",
+          "target": "alias(sumSeries(osg-ospool.slots.PartitionableGlidein.totals.Cpus,test.osg-ospool.slots.StaticGlidein.Unclaimed.Cpus), 'Unclaimed')",
           "textEditor": true
         },
         {
           "refCount": 1,
           "refId": "E",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.DynamicGlidein.Unusable.Cpus,test.osg-open-pool.slots.StaticGlidein.Unusable.Cpus), 'Unusable')",
+          "target": "alias(sumSeries(osg-ospool.slots.DynamicGlidein.Unusable.Cpus,test.osg-ospool.slots.StaticGlidein.Unusable.Cpus), 'Unusable')",
           "textEditor": true
         },
         {
           "hide": false,
           "refCount": 1,
           "refId": "B",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalSlotCpus,test.osg-open-pool.slots.StaticGlidein.totals.Cpus), 'Total')",
+          "target": "alias(sumSeries(osg-ospool.slots.PartitionableGlidein.totals.TotalSlotCpus,test.osg-ospool.slots.StaticGlidein.totals.Cpus), 'Total')",
           "textEditor": true
         },
         {
           "refCount": 0,
           "refId": "D",
-          "target": "alias(minSeries(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-open-pool.slots.StaticGlidein.Claimed.*.*.LoadAvg),#A),'Effective')",
-          "targetFull": "alias(minSeries(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-open-pool.slots.StaticGlidein.Claimed.*.*.LoadAvg),alias(diffSeries(alias(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.TotalSlotCpus,test.osg-open-pool.slots.StaticGlidein.totals.Cpus), 'Total'), alias(sumSeries(test.osg-open-pool.slots.PartitionableGlidein.totals.Cpus,test.osg-open-pool.slots.StaticGlidein.Unclaimed.Cpus), 'Unclaimed')), 'Claimed')),'Effective')",
+          "target": "alias(minSeries(sumSeries(osg-ospool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-ospool.slots.StaticGlidein.Claimed.*.*.LoadAvg),#A),'Effective')",
+          "targetFull": "alias(minSeries(sumSeries(osg-ospool.slots.PartitionableGlidein.totals.TotalCondorLoadAvg, test.osg-ospool.slots.StaticGlidein.Claimed.*.*.LoadAvg),alias(diffSeries(alias(sumSeries(test.osg-ospool.slots.PartitionableGlidein.totals.TotalSlotCpus,test.osg-ospool.slots.StaticGlidein.totals.Cpus), 'Total'), alias(sumSeries(test.osg-ospool.slots.PartitionableGlidein.totals.Cpus,test.osg-ospool.slots.StaticGlidein.Unclaimed.Cpus), 'Unclaimed')), 'Claimed')),'Effective')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "CPU",
       "tooltip": {
         "shared": true,
@@ -537,9 +518,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -547,7 +526,6 @@
         {
           "format": "none",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
@@ -555,13 +533,11 @@
           "format": "percentunit",
           "logBase": 1,
           "max": 1,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -575,15 +551,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 8,
       "fillGradient": 0,
       "grid": {},
@@ -611,8 +584,11 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -640,35 +616,33 @@
         },
         {
           "refId": "F",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Dynamic.Claimed.*.*.Memory,test.osg-open-pool.slots.Static.Claimed.*.*.Memory), 'Claimed')",
+          "target": "alias(sumSeries(osg-ospool.slots.Dynamic.Claimed.*.*.Memory,test.osg-ospool.slots.Static.Claimed.*.*.Memory), 'Claimed')",
           "textEditor": true
         },
         {
           "refId": "C",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Partitionable.totals.Memory,test.osg-open-pool.slots.Static.Unclaimed.Memory), 'Unclaimed')",
+          "target": "alias(sumSeries(osg-ospool.slots.Partitionable.totals.Memory,test.osg-ospool.slots.Static.Unclaimed.Memory), 'Unclaimed')",
           "textEditor": true
         },
         {
           "refId": "E",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Dynamic.Unusable.Memory,test.osg-open-pool.slots.Static.Unusable.Memory), 'Unusable')",
+          "target": "alias(sumSeries(osg-ospool.slots.Dynamic.Unusable.Memory,test.osg-ospool.slots.Static.Unusable.Memory), 'Unusable')",
           "textEditor": true
         },
         {
           "hide": false,
           "refId": "B",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Partitionable.totals.TotalSlotMemory,test.osg-open-pool.slots.Static.totals.Memory), 'Total')",
+          "target": "alias(sumSeries(osg-ospool.slots.Partitionable.totals.TotalSlotMemory,test.osg-ospool.slots.Static.totals.Memory), 'Total')",
           "textEditor": true
         },
         {
           "refId": "D",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.jobs.totals.MemoryUsage), 'Effective')",
+          "target": "alias(sumSeries(osg-ospool.slots.jobs.totals.MemoryUsage), 'Effective')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Memory",
       "tooltip": {
         "shared": true,
@@ -677,9 +651,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -687,7 +659,6 @@
         {
           "format": "mbytes",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
@@ -695,13 +666,11 @@
           "format": "percentunit",
           "logBase": 1,
           "max": 1,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -715,15 +684,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 8,
       "fillGradient": 0,
       "grid": {},
@@ -751,8 +717,11 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -780,35 +749,33 @@
         },
         {
           "refId": "F",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Dynamic.Claimed.*.*.Disk,test.osg-open-pool.slots.Static.Claimed.*.*.Disk), 'Claimed')",
+          "target": "alias(sumSeries(osg-ospool.slots.Dynamic.Claimed.*.*.Disk,test.osg-ospool.slots.Static.Claimed.*.*.Disk), 'Claimed')",
           "textEditor": true
         },
         {
           "refId": "C",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Partitionable.totals.Disk,test.osg-open-pool.slots.Static.Unclaimed.Disk), 'Unclaimed')",
+          "target": "alias(sumSeries(osg-ospool.slots.Partitionable.totals.Disk,test.osg-ospool.slots.Static.Unclaimed.Disk), 'Unclaimed')",
           "textEditor": true
         },
         {
           "refId": "E",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Dynamic.Unusable.Disk,test.osg-open-pool.slots.Static.Unusable.Disk), 'Unusable')",
+          "target": "alias(sumSeries(osg-ospool.slots.Dynamic.Unusable.Disk,test.osg-ospool.slots.Static.Unusable.Disk), 'Unusable')",
           "textEditor": true
         },
         {
           "hide": false,
           "refId": "B",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.Partitionable.totals.TotalSlotDisk,test.osg-open-pool.slots.Static.totals.Disk), 'Total')",
+          "target": "alias(sumSeries(osg-ospool.slots.Partitionable.totals.TotalSlotDisk,test.osg-ospool.slots.Static.totals.Disk), 'Total')",
           "textEditor": true
         },
         {
           "refId": "D",
-          "target": "alias(sumSeries(test.osg-open-pool.slots.jobs.totals.DiskUsage), 'Effective')",
+          "target": "alias(sumSeries(osg-ospool.slots.jobs.totals.DiskUsage), 'Effective')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Disk",
       "tooltip": {
         "shared": true,
@@ -817,9 +784,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -827,7 +792,6 @@
         {
           "format": "kbytes",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
@@ -835,18 +799,15 @@
           "format": "percentunit",
           "logBase": 1,
           "max": 1,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -869,15 +830,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 7,
       "fillGradient": 0,
       "grid": {},
@@ -909,8 +867,11 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -923,21 +884,19 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(exclude(sumSeriesWithWildcards(test.osg-open-pool.slots.{StaticGlidein,DynamicGlidein}.Claimed.*.*.NumSlots, 1,3,6), 'None|Unknown'), 3)",
+          "target": "aliasByNode(exclude(sumSeriesWithWildcards(osg-ospool.slots.{StaticGlidein,DynamicGlidein}.Claimed.*.*.NumSlots, 1,3,6), 'None|Unknown'), 3)",
           "textEditor": true
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(sumSeriesWithWildcards(test.osg-open-pool.slots.{StaticGlidein,DynamicGlidein}.Claimed.{None,Unknown}.*.NumSlots, 1, 3, 5), 3)",
+          "target": "aliasByNode(sumSeriesWithWildcards(osg-ospool.slots.{StaticGlidein,DynamicGlidein}.Claimed.{None,Unknown}.*.NumSlots, 1, 3, 5), 3)",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Claimed Slots by Group",
       "tooltip": {
         "shared": true,
@@ -946,9 +905,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -956,21 +913,17 @@
         {
           "format": "none",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -984,15 +937,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 7,
       "fillGradient": 0,
       "grid": {},
@@ -1024,8 +974,11 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1038,21 +991,19 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(exclude(sumSeriesWithWildcards(test.osg-open-pool.slots.{StaticGlidein,DynamicGlidein}.Claimed.*.*.Weighted, 1, 3, 6), 'None|Unknown'), 3)",
+          "target": "aliasByNode(exclude(sumSeriesWithWildcards(osg-ospool.slots.{StaticGlidein,DynamicGlidein}.Claimed.*.*.Weighted, 1, 3, 6), 'None|Unknown'), 3)",
           "textEditor": true
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(sumSeriesWithWildcards(test.osg-open-pool.slots.{StaticGlidein,DynamicGlidein}.Claimed.{None,Unknown}.*.Weighted, 1, 3, 5), 3)",
+          "target": "aliasByNode(sumSeriesWithWildcards(osg-ospool.slots.{StaticGlidein,DynamicGlidein}.Claimed.{None,Unknown}.*.Weighted, 1, 3, 5), 3)",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Weighted Slots by Group",
       "tooltip": {
         "shared": true,
@@ -1061,9 +1012,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1071,26 +1020,21 @@
         {
           "format": "none",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1113,15 +1057,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 7,
       "fillGradient": 0,
       "grid": {},
@@ -1154,7 +1095,7 @@
       "links": [],
       "nullPointMode": "null as zero",
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1166,20 +1107,18 @@
         {
           "hide": false,
           "refId": "A",
-          "target": "aliasByNode(exclude(sumSeriesWithWildcards(test.osg-open-pool.slots.{Static,Dynamic}.Claimed.*.*.Cpus, 1, 3, 6), 'None|Unknown'), 3)",
+          "target": "aliasByNode(exclude(sumSeriesWithWildcards(osg-ospool.slots.{Static,Dynamic}.Claimed.*.*.Cpus, 1, 3, 6), 'None|Unknown'), 3)",
           "textEditor": true
         },
         {
           "hide": false,
           "refId": "B",
-          "target": "aliasByNode(sumSeriesWithWildcards(test.osg-open-pool.slots.{Static,Dynamic}.Claimed.{None,Unknown}.*.Cpus, 1, 3, 5), 3)",
+          "target": "aliasByNode(sumSeriesWithWildcards(osg-ospool.slots.{Static,Dynamic}.Claimed.{None,Unknown}.*.Cpus, 1, 3, 5), 3)",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Claimed CPUs by Group",
       "tooltip": {
         "shared": true,
@@ -1188,9 +1127,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1198,21 +1135,17 @@
         {
           "format": "none",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1226,15 +1159,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 7,
       "fillGradient": 0,
       "grid": {},
@@ -1267,7 +1197,7 @@
       "links": [],
       "nullPointMode": "null as zero",
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1279,20 +1209,18 @@
         {
           "hide": false,
           "refId": "A",
-          "target": "aliasByNode(exclude(sumSeriesWithWildcards(test.osg-open-pool.slots.{Static,Dynamic}.Claimed.*.*.Memory, 1, 3, 6), 'None|Unknown'), 3)",
+          "target": "aliasByNode(exclude(sumSeriesWithWildcards(osg-ospool.slots.{Static,Dynamic}.Claimed.*.*.Memory, 1, 3, 6), 'None|Unknown'), 3)",
           "textEditor": true
         },
         {
           "hide": false,
           "refId": "B",
-          "target": "aliasByNode(sumSeriesWithWildcards(test.osg-open-pool.slots.{Static,Dynamic}.Claimed.{None,Unknown}.*.Memory, 1, 3, 5), 3)",
+          "target": "aliasByNode(sumSeriesWithWildcards(osg-ospool.slots.{Static,Dynamic}.Claimed.{None,Unknown}.*.Memory, 1, 3, 5), 3)",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Claimed Memory by Group",
       "tooltip": {
         "shared": true,
@@ -1301,9 +1229,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1311,21 +1237,17 @@
         {
           "format": "mbytes",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1339,15 +1261,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 7,
       "fillGradient": 0,
       "grid": {},
@@ -1380,7 +1299,7 @@
       "links": [],
       "nullPointMode": "null as zero",
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1392,20 +1311,18 @@
         {
           "hide": false,
           "refId": "A",
-          "target": "aliasByNode(exclude(sumSeriesWithWildcards(test.osg-open-pool.slots.{Static,Dynamic}.Claimed.*.*.Disk, 1, 3, 6), 'None|Unknown'), 3)",
+          "target": "aliasByNode(exclude(sumSeriesWithWildcards(osg-ospool.slots.{Static,Dynamic}.Claimed.*.*.Disk, 1, 3, 6), 'None|Unknown'), 3)",
           "textEditor": true
         },
         {
           "hide": false,
           "refId": "B",
-          "target": "aliasByNode(sumSeriesWithWildcards(test.osg-open-pool.slots.{Static,Dynamic}.Claimed.{None,Unknown}.*.Disk, 1, 3, 5), 3)",
+          "target": "aliasByNode(sumSeriesWithWildcards(osg-ospool.slots.{Static,Dynamic}.Claimed.{None,Unknown}.*.Disk, 1, 3, 5), 3)",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Claimed Disk by Group",
       "tooltip": {
         "shared": true,
@@ -1414,9 +1331,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1424,33 +1339,29 @@
         {
           "format": "kbytes",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     }
   ],
   "refresh": "5m",
-  "schemaVersion": 26,
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-24h",
     "to": "now-5m"
   },
   "timepicker": {
@@ -1488,6 +1399,6 @@
   "timezone": "browser",
   "title": "Utilization",
   "uid": "66DgsTvGk",
-  "version": 4
+  "version": 2,
+  "weekStart": ""
 }
-

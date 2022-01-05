@@ -22,6 +22,7 @@ RUN pip install --upgrade setuptools==41.4.0 && \
 COPY entrypoint.sh /opt/entrypoint.sh
 COPY fifemon.cfg-development /etc/fifemon.cfg-development
 COPY fifemon.cfg-production /etc/fifemon.cfg-production
+COPY 50-ospool.conf /etc/condor/config.d/50-ospool.conf
 
 CMD [ "/opt/entrypoint.sh" ]
 

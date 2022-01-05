@@ -20,9 +20,9 @@ host = graphite.mwt2.org
 # graphite pickle port
 port = 2004
 # base namespace for metrics
-namespace = test.osg-open-pool
+namespace = test.osg-ospool
 # namespace for probe monitoring metrics
-meta_namespace = test.osg-open-pool.probes
+meta_namespace = test.osg-ospool.probes
 
 [influxdb]
 # enable output to influxdb (not fully supported)
@@ -38,7 +38,7 @@ tags = cluster:test
 
 [condor]
 # central manager/collector host
-pool = flock.opensciencegrid.org
+pool = cm-1.ospool-itb.osg-htc.org
 # collect basic daemon (collector, negotiator, schedd) metrics?
 post_pool_status = true
 # collect machine/startd metrics?
@@ -59,7 +59,7 @@ post_pool_jobs = true
 # constraint to limit which schedds are queried
 schedd_constraint = regexp("jupyter-notebook", Name) != True && regexp("cyverse", Name) != True
 # Enable GSI (x509 certificate) authorization
-use_gsi_auth = true
+use_gsi_auth = false
 X509_USER_KEY = "/etc/condor/flock-key.pem"
 X509_USER_CERT = "/etc/condor/flock-cert.pem"
 

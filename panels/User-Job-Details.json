@@ -8,15 +8,21 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1604359120699,
+  "id": 4,
+  "iteration": 1641408477974,
   "links": [
     {
       "icon": "external link",
@@ -28,21 +34,19 @@
       "type": "dashboards"
     }
   ],
+  "liveNow": false,
   "panels": [
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 1,
       "fillGradient": 0,
       "grid": {},
@@ -70,8 +74,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -82,14 +89,12 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(test.osg-open-pool.jobs.users.$user.running.totals.count_recent, 'Started')",
+          "target": "alias(osg-ospool.jobs.users.$user.running.totals.count_recent, 'Started')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Recent Jobs Started",
       "tooltip": {
         "msResolution": false,
@@ -99,9 +104,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -110,22 +113,17 @@
           "format": "none",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "none",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -133,15 +131,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 1,
       "fillGradient": 0,
       "grid": {},
@@ -169,8 +164,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -181,14 +179,12 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(test.osg-open-pool.jobs.users.$user.idle.totals.count_recent, 'Submitted')",
+          "target": "alias(osg-ospool.jobs.users.$user.idle.totals.count_recent, 'Submitted')",
           "textEditor": true
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Recent Jobs Submitted",
       "tooltip": {
         "msResolution": false,
@@ -198,9 +194,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -209,22 +203,17 @@
           "format": "none",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "none",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -234,15 +223,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 7,
       "fillGradient": 0,
       "grid": {},
@@ -267,8 +253,11 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -284,24 +273,22 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(keepLastValue(sumSeries(test.osg-open-pool.jobs.users.$user.running.totals.count), 2), 'Running')",
+          "target": "alias(keepLastValue(sumSeries(osg-ospool.jobs.users.$user.running.totals.count), 2), 'Running')",
           "textEditor": false
         },
         {
           "refId": "B",
-          "target": "alias(keepLastValue(sumSeries(test.osg-open-pool.jobs.users.$user.idle.totals.count), 2), 'Idle')",
+          "target": "alias(keepLastValue(sumSeries(osg-ospool.jobs.users.$user.idle.totals.count), 2), 'Idle')",
           "textEditor": false
         },
         {
           "refId": "C",
-          "target": "alias(keepLastValue(sumSeries(test.osg-open-pool.jobs.users.$user.held.totals.count), 2), 'Held')",
+          "target": "alias(keepLastValue(sumSeries(osg-ospool.jobs.users.$user.held.totals.count), 2), 'Held')",
           "textEditor": false
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Job Summary",
       "tooltip": {
         "msResolution": false,
@@ -311,9 +298,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -321,21 +306,16 @@
         {
           "format": "none",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -343,15 +323,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Graphite",
+      "datasource": {
+        "type": "graphite",
+        "uid": "YYzaMionk"
+      },
       "editable": true,
       "error": false,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -376,8 +353,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "8.3.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -388,7 +368,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(keepLastValue(test.osg-open-pool.jobs.users.$user.running.totals.efficiency, 2), 'CPU Efficiency')",
+          "target": "alias(keepLastValue(osg-ospool.jobs.users.$user.running.totals.efficiency, 2), 'CPU Efficiency')",
           "textEditor": false
         }
       ],
@@ -408,9 +388,7 @@
           "value": 50
         }
       ],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "CPU Efficiency",
       "tooltip": {
         "msResolution": false,
@@ -420,9 +398,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -438,151 +414,169 @@
         {
           "format": "short",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "aliasColors": {
-        "Quota": "#890F02"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Graphite",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 70,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 0,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Quota"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#890F02",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Idle"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.stacking",
+                "value": {
+                  "group": false,
+                  "mode": "normal"
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 7,
-      "fillGradient": 0,
-      "grid": {},
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
         "y": 11
       },
-      "hiddenSeries": false,
       "id": 4,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 0,
       "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "Idle",
-          "fill": 0,
-          "linewidth": 2,
-          "stack": false,
-          "yaxis": 2
+      "maxDataPoints": 100,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
         }
-      ],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
+      },
+      "pluginVersion": "8.3.3",
       "targets": [
         {
+          "datasource": {
+            "type": "graphite",
+            "uid": "YYzaMionk"
+          },
           "refId": "A",
-          "target": "aliasByNode(keepLastValue(test.osg-open-pool.jobs.users.$user.running.sites.*.count, 2), 7)",
-          "textEditor": false
+          "target": "aliasByNode(keepLastValue(osg-ospool.jobs.users.$user.running.sites.*.count, 5), 6)",
+          "textEditor": true
         }
       ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
       "title": "Running by Site",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "none",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     }
   ],
-  "refresh": "5m",
-  "schemaVersion": 26,
+  "refresh": "",
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
         "allFormat": "glob",
-        "allValue": null,
         "current": {
           "selected": false,
           "text": "dweitzel",
           "value": "dweitzel"
         },
-        "datasource": "Graphite",
-        "definition": "test.osg-open-pool.jobs.users.*",
+        "datasource": {
+          "type": "graphite",
+          "uid": "YYzaMionk"
+        },
+        "definition": "osg-ospool.jobs.users.*",
         "hide": 0,
         "includeAll": false,
-        "label": null,
         "multi": false,
         "name": "user",
         "options": [],
-        "query": "test.osg-open-pool.jobs.users.*",
+        "query": "osg-ospool.jobs.users.*",
         "refresh": 1,
         "refresh_on_load": false,
         "regex": "",
         "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -590,8 +584,8 @@
     ]
   },
   "time": {
-    "from": "now-7d",
-    "to": "now"
+    "from": "now-24h",
+    "to": "now-5m"
   },
   "timepicker": {
     "collapse": false,
@@ -628,6 +622,6 @@
   "timezone": "browser",
   "title": "User Jobs Details",
   "uid": "1HF7QTDGz",
-  "version": 2
+  "version": 5,
+  "weekStart": ""
 }
-
