@@ -163,6 +163,7 @@ def get_jobs(job_q, schedd_ad, constraint=True, attrs=['ClusterId','ProcId','Job
 def get_idle_jobs(job_q, schedd_ad, retry_delay=30, max_retries=4):
     get_jobs(job_q, schedd_ad, constraint='JobStatus==1', retry_delay=retry_delay, max_retries=max_retries,
             attrs=["ClusterId","ProcId","Owner",
+                "NumJobStarts", "NumShadowStarts", "NumHolds", "NumSystemHolds",
                 "AccountingGroup","ProjectName","JobStatus",
                 "SingularityImage",
                 "DESIRED_usage_model","DESIRED_Sites","JobUniverse",
@@ -172,6 +173,7 @@ def get_idle_jobs(job_q, schedd_ad, retry_delay=30, max_retries=4):
 def get_running_jobs(job_q, schedd_ad, retry_delay=30, max_retries=4):
     get_jobs(job_q, schedd_ad, constraint='JobStatus==2', retry_delay=retry_delay, max_retries=max_retries,
             attrs=["ClusterId","ProcId","Owner",
+                "NumJobStarts", "NumShadowStarts", "NumHolds", "NumSystemHolds",
                 "MATCH_GLIDEIN_Site","MATCH_EXP_JOBGLIDEIN_ResourceName",
                 "AccountingGroup","ProjectName","JobStatus",
                 "SingularityImage",
@@ -183,6 +185,7 @@ def get_running_jobs(job_q, schedd_ad, retry_delay=30, max_retries=4):
 def get_held_jobs(job_q, schedd_ad, retry_delay=30, max_retries=4):
     get_jobs(job_q, schedd_ad, constraint='JobStatus==5', retry_delay=retry_delay, max_retries=max_retries,
             attrs=["ClusterId","ProcId","Owner",
+                "NumJobStarts", "NumShadowStarts", "NumHolds", "NumSystemHolds",
                 "AccountingGroup","ProjectName","JobStatus",
                 "SingularityImage",
                 "JobUniverse",
@@ -268,10 +271,38 @@ class Jobs(object):
                         counts[m+".cputime"] += cputime
                         counts[m+".efficiency"] = max(min(counts[m+".cputime"]/counts[m+".walltime"]*100,100),0)
                         counts[m+".wastetime"] = counts[m+".walltime"]-counts[m+".cputime"]
+                        if walltime > counts[m+".walltime_max"]:
+                            counts[m+".walltime_max"] = walltime
                         if counts[m+".count"] > 0:
+                            counts[m+".walltime_avg"] = counts[m+".walltime"]/counts[m+".count"]
                             counts[m+".wastetime_avg"] = counts[m+".wastetime"]/counts[m+".count"]
                     except:
                         logger.warning("Problem with walltime: {0} {1} {2}".format(walltime, counts[m+".walltime"], counts[m+".count"]))
+
+                if "NumJobStarts" in r:
+                    starts = r.eval("NumJobStarts")
+                    try:
+                        counts[m+".job_starts"] += starts
+                    except:
+                        pass
+                if "NumShadowStarts" in r:
+                    starts = r.eval("NumShadowStarts")
+                    try:
+                        counts[m+".shadow_starts"] += starts
+                    except:
+                        pass
+                if "NumHolds" in r:
+                    holds = r.eval("NumHolds")
+                    try:
+                        counts[m+".holds"] += holds
+                    except:
+                        pass
+                if "NumSystemHolds" in r:
+                    holds = r.eval("NumSystemHolds")
+                    try:
+                        counts[m+".holds_system"] += holds
+                    except:
+                        pass
 
                 ## one standard slot == 1 cpu and 2000 MB of memory (undefined amount of disk)
                 std_slots = 1
@@ -285,8 +316,9 @@ class Jobs(object):
                 if "RequestGpus" in r:
                     gpus = r.eval("RequestGpus")
                     try:
-                        counts[m+".gpu_request"] += gpus
-                        std_slots = max(std_slots,gpus)
+                        if int(gpus) == gpus:
+                            counts[m+".gpu_request"] += gpus
+                            std_slots = max(std_slots,gpus)
                     except:
                         pass
                 if "RequestMemory" in r:

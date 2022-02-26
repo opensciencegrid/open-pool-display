@@ -7,7 +7,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'htcondor',
-        'prometheus-client',
+        'prometheus-client==0.10.1',
         'elasticsearch',
         'influxdb',
     ],

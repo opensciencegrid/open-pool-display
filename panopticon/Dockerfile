@@ -4,14 +4,17 @@ RUN yum -y upgrade && \
     yum -y install epel-release yum-plugin-priorities && \
     yum -y install http://repo.opensciencegrid.org/osg/3.5/osg-3.5-el7-release-latest.rpm    
 
-RUN yum -y --enablerepo=osg-upcoming install \
+RUN yum -y upgrade && \
+    yum -y --enablerepo=osg-upcoming install \
            condor \
            curl \
            git \
            python-devel \
            python-pip \
            python-setuptools \
-           wget
+           wget \
+    && \
+    yum clean all
 
 COPY fifemon-condor-probe /fifemon
 
